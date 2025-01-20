@@ -8,7 +8,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://drive.google.com/file/d/1CDoLMFdwwiRA_RC4Q7PyszQx_dOt6jRd/view?usp=sharing" alt="project-screenshot" width="700" height="700/">
+https://drive.google.com/file/d/1CDoLMFdwwiRA_RC4Q7PyszQx_dOt6jRd/view?usp=sharing
 
   
   
