@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from "@/components/ui/badge";
 import { Eye, EyeOff } from "lucide-react";
 
+
 const PayloadViewer = ({ payload, length }) => {
   const [showRaw, setShowRaw] = useState(false);
 
@@ -76,7 +77,8 @@ const Page = () => {
     packet.source.ip.includes(filter) ||
     packet.destination.ip.includes(filter) ||
     packet.source.city.toLowerCase().includes(filter.toLowerCase()) ||
-    packet.destination.city.toLowerCase().includes(filter.toLowerCase())
+    packet.destination.city.toLowerCase().includes(filter.toLowerCase()) ||
+    packet.flags.toLowerCase().includes(filter.toLowerCase())
   );
 
   if (!packets.length) {

@@ -7,7 +7,9 @@ from ip_to_geolocation import IpToGeographicalData
 def packet_callback(packet,dependecyArray,interface):
     """Process each captured packet and store in global list"""
     try:
+        print(f'found packet: {packet}')
         if IP in packet and TCP in packet:
+
             packet_info = {
                 'timestamp': datetime.fromtimestamp(packet.time).strftime('%Y-%m-%d %H:%M:%S'),
                 'src_ip': packet[IP].src,

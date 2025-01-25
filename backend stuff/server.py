@@ -14,7 +14,7 @@ CORS(app)
 # Global packet store and counter
 packet_store = []
 packets_sent = 0
-MAX_PACKETS =30
+MAX_PACKETS =100
 capture_thread = None
 networkInterface = "Wi-Fi"
 
@@ -22,7 +22,7 @@ def run_capture():
     """Run packet capture in a separate thread"""
     try:
         print('started capturing on :',networkInterface)
-        captured_packets = start_capture(depArr=packet_store,interface=networkInterface)
+        captured_packets = start_capture(depArr=packet_store)
     except KeyboardInterrupt:
         print("Capture stopped by user")
     except Exception as e:
@@ -40,6 +40,8 @@ def serialize_packet(packet):
         'length': str(packet.get('payload_length', '')),
         'flags' : str(packet.get('flags','')),
         'payload': str(packet.get('payload')),
+        'DNS query': str(packet.get('DNS query')),
+        'DNS response': str(packet.get('DNS response'))
     }
 
 @app.route('/stream-packets',methods=['GET','POST'])

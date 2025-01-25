@@ -97,6 +97,7 @@ const Page = () => {
       if (data.packets) {
         setPackets((prev) => [...prev, ...data.packets]);
         processPackets(data.packets);
+        console.log(data.packets)
         totalPacketCount += Number(data.packets.length);
         setStatus(`Captured ${totalPacketCount}  packets on ${data.interface}`);
         setIsLoading(false);
@@ -192,6 +193,7 @@ const Page = () => {
       <WorldMapArcs
         connections={cityData.connections}
         cityCords={cityData.latitudeLongitude}
+        packets = {packets}
       />
     </div>
   );
